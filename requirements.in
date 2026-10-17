@@ -1,0 +1,3 @@
+# 沙箱基础镜像预装的 Python 包（顶层依赖）。修改后按 README 重新生成 requirements.txt。
+numpy==2.5.4
+pandas==3.0.6
