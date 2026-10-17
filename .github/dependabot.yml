@@ -1,9 +1,15 @@
 version: 2
 updates:
+  # 只跟进同一大版本内的补丁与摘要更新；升级 Python 或 Node.js 的版本线需人工评估后修改 Dockerfile。
   - package-ecosystem: docker
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      - dependency-name: node
+        update-types: ["version-update:semver-major"]
+      - dependency-name: python
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
